@@ -37,7 +37,7 @@ export class MyApp {
   }
 
   goHome():void{
-    this.nav.push(MyTeamsPage);
+    this.nav.popToRoot();
   }
 
   goToTournaments():void{

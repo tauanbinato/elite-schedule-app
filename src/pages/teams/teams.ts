@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { TeamDetailsPage } from '../team-details/team-details';
+import { TeamHomePage } from '../team-home/team-home';
 
 
 @Component({
@@ -9,6 +9,13 @@ import { TeamDetailsPage } from '../team-details/team-details';
 })
 export class TeamsPage {
 
+  public teams = [
+
+    { id: 1, name: 'HC Elite'},
+    { id: 2, name: 'Team Takeover'},
+    { id: 2, name: 'DC Thunder'}
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -16,8 +23,8 @@ export class TeamsPage {
     console.log('ionViewDidLoad TeamsPage');
   }
 
-  itemTapped():void{
-    this.navCtrl.push(TeamDetailsPage);
+  itemTapped($event, team):void{
+    this.navCtrl.push(TeamHomePage, team);
   }
 
 }
